@@ -1,0 +1,3 @@
+# ajax_demo
+此demo适合ajax的初学者
+整个执行的过程是，ajax传递参数给了函数ajax_demo，函数获取到用户键入的值，然后通过HttpResponse返回给回调函数success，回调函数再执行相应的操作
