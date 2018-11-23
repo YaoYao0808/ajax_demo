@@ -1,0 +1,36 @@
+<body>
+    <div>
+        <p>用户名: <input type="text" id="username" /></p>
+    </div>
+    <div>
+        <p>密码: <input type="password" id="pwd" /></p>
+    </div>
+    <input type="button" value="提交" onclick="SubmitForm();"/>
+
+    <script src="http://code.jquery.com/jquery-1.2.3.min.js"></script>
+    <script>
+        function SubmitForm(){
+            $.ajax({
+                url:'/ajax_demo/',
+                type:'POST',
+
+                data:{'user':$('#username').val(),'pwd':$('#pwd').val()},
+                dataType:'json',
+                success:function(data){
+                    if(data.status){
+                        alert(data.status)  //true
+                        location.href="http://www.baidu.com";
+                    }
+                    else{
+                        alert(data.message)
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+
+
+
+
+
